@@ -10,8 +10,10 @@ jobs:
   steps:
     - uses: actions/checkout@main
     - name: Create .env 
-      run: echo 'PORT=${{secrets.PORT}}' > .env
-      
+      run: echo 'WP_PORT=${{ secrets.WP_PORT }}' > .env
+    #Reboot.
+    - name: Down container
+      run: docker-compose down --volumes
     - name: Run build
       run: docker-compose up -d 
       
