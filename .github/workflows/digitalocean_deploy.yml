@@ -7,12 +7,12 @@ jobs:
   Build:
     runs-on: self-hosted
   
-  steps:
-    uses: actions/checkout@main
-  - name: "Create .env"
-    run: echo 'WP_PORT=${{ secrets.WP_PORT }}' > .env
+    steps:
+      - uses: actions/checkout@main
+      - name: "Create .env"
+        run: echo 'WP_PORT=${{ secrets.WP_PORT }}' > .env
 
     #Reboot.
-  - name: Run build
-    run: docker-compose up -d
+      - name: Run build
+        run: docker-compose up -d
       
