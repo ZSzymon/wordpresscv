@@ -12,7 +12,10 @@ jobs:
       - name: "Create .env"
         run: |
           echo 'WP_PORT=${{ secrets.WP_PORT }}' > .env
-          echo 'PHP_ADMIN_PW=${{ secrets.PHP_ADMIN_PW }}' > .env
+          echo 'PHP_ADMIN_PW=${{ secrets.PHP_ADMIN_PW }}' >> .env
+          echo 'MYSQL_PASSWORD=${{ secrets.MYSQL_PASSWORD }}' >> .env
+          echo 'DB_PORT=${{ secrets.DB_PORT }}' >> .env
+          echo 'PHP_ADMIN_PW=${{ secrets.PHP_ADMIN_PW }}' >> .env
 
 
     #Reboot.
